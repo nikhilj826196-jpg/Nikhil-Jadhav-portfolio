@@ -1,0 +1,14 @@
+/* ============================================================
+   PORTFOLIO — DESIGN SYSTEM ENTRY POINT
+   All styles are split into logical modules inside src/styles/
+============================================================ */
+
+@import './styles/base.css';       /* Variables, Reset, Buttons, Animations */
+@import './styles/navbar.css';     /* Navigation bar */
+@import './styles/hero.css';       /* Hero section */
+@import './styles/about.css';      /* About section */
+@import './styles/skills.css';     /* Skills section */
+@import './styles/projects.css';   /* Projects section */
+@import './styles/contact.css';    /* Contact form & Toasts */
+@import './styles/footer.css';     /* Footer */
+@import './styles/responsive.css'; /* Media queries & Back-to-top */

@@ -1,0 +1,138 @@
+/* ============================================================
+   BASE — Variables, Reset, Layout, Buttons, Animations
+============================================================ */
+
+/* ---- VARIABLES ---- */
+:root {
+  --primary: #2563eb;
+  --primary-h: #1d4ed8;
+  --primary-d: #1e40af;
+  --primary-l: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-glow: rgba(37,99,235,0.18);
+  --secondary: #0f172a;
+  --sec-800: #1e293b;
+  --sec-700: #334155;
+
+  --bg: #ffffff;
+  --bg2: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --light: #94a3b8;
+  --border: #e2e8f0;
+  --border-l: #f1f5f9;
+
+  --font-h: 'Outfit', sans-serif;
+  --font-b: 'Inter', sans-serif;
+  --font-m: 'Fira Code','Courier New',monospace;
+
+  --w: 1240px;
+  --tx: all 0.3s cubic-bezier(.4,0,.2,1);
+  --tb: all 0.4s cubic-bezier(.34,1.56,.64,1);
+  --ts: all 0.5s cubic-bezier(.4,0,.2,1);
+
+  --s1: 0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
+  --s2: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+  --s3: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+  --s4: 0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);
+  --s5: 0 25px 50px -12px rgba(0,0,0,.25);
+  --sb:  0 8px 30px rgba(37,99,235,.25);
+  --sb2: 0 16px 50px rgba(37,99,235,.35);
+}
+
+/* ---- RESET ---- */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none;transition:var(--tx)}
+ul{list-style:none}
+img{max-width:100%;height:auto;display:block}
+button{border:none;cursor:pointer;background:none;font-family:inherit}
+
+/* ---- SCROLL PROGRESS BAR ---- */
+.scroll-progress{
+  position:fixed;top:0;left:0;height:3px;
+  background:linear-gradient(90deg,var(--primary),#60a5fa,var(--primary));
+  background-size:200% 100%;
+  animation:shimmer 2s linear infinite;
+  transition:width .1s ease-out;z-index:9999
+}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+/* ---- LAYOUT ---- */
+.container{width:100%;max-width:var(--w);margin:0 auto;padding:0 1.5rem}
+.sec-alt{background:var(--bg2)}
+.text-c{text-align:center}
+
+/* ---- SECTION HEADER ---- */
+.sec-head{margin-bottom:4rem}
+.sec-tag{
+  display:inline-block;font-size:.78rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.12em;
+  color:var(--primary);background:var(--primary-l);
+  border:1px solid var(--primary-100);
+  padding:.35rem 1rem;border-radius:9999px;margin-bottom:.85rem
+}
+.sec-title{
+  font-family:var(--font-h);
+  font-size:clamp(1.75rem,3vw,2.5rem);
+  font-weight:800;color:var(--secondary);margin-bottom:.85rem;line-height:1.15
+}
+.accent-bar{
+  width:50px;height:4px;
+  background:linear-gradient(90deg,var(--primary),#60a5fa);
+  border-radius:2px;margin:0 auto
+}
+
+/* ---- BUTTONS ---- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--font-b);font-weight:600;font-size:1rem;
+  height:48px;padding:0 2rem;border-radius:12px;cursor:pointer;
+  transition:var(--tb);border:2px solid transparent;white-space:nowrap
+}
+.btn-p{
+  background:linear-gradient(135deg,var(--primary),var(--primary-d));
+  color:#fff;box-shadow:var(--sb)
+}
+.btn-p:hover{
+  background:linear-gradient(135deg,var(--primary-h),#1e3a8a);
+  transform:translateY(-3px);box-shadow:var(--sb2)
+}
+.btn-o{
+  background:#fff;border-color:var(--border);color:var(--text);
+  transition:background .35s ease,
+             border-color .35s ease,
+             color .35s ease,
+             transform .4s cubic-bezier(.34,1.56,.64,1),
+             box-shadow .35s ease
+}
+.btn-o:hover{
+  background:var(--primary);border-color:var(--primary);
+  color:#fff;transform:translateY(-3px);
+  box-shadow:0 6px 18px rgba(37,99,235,.15)
+}
+.btn-ghost{
+  background:transparent;border-color:var(--border);color:var(--muted)
+}
+.btn-ghost:hover{
+  background:var(--primary-l);border-color:var(--primary);
+  color:var(--primary);transform:translateY(-2px)
+}
+.btn-sm{padding:.55rem 1.25rem;font-size:.875rem;border-radius:8px}
+
+/* ---- TEXT GRADIENT ---- */
+.text-grad{
+  background:linear-gradient(135deg,var(--primary) 0%,#60a5fa 50%,var(--primary-d) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+}
+
+/* ---- SCROLL ANIMATIONS ---- */
+.anim.fade-up{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.anim.fade-up.vis{opacity:1;transform:translateY(0)}
+.anim.fade-l{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.anim.fade-l.vis{opacity:1;transform:translateX(0)}
+.anim.fade-r{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.anim.fade-r.vis{opacity:1;transform:translateX(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}

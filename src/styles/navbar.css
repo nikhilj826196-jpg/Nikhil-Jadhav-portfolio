@@ -1,0 +1,58 @@
+/* ============================================================
+   NAVBAR  (Header.jsx)
+============================================================ */
+.navbar{
+  --nav-h: 68px;
+  position:fixed;top:0;left:0;width:100%;
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(226,232,240,.5);
+  z-index:1000;transition:var(--tx)
+}
+.navbar.scrolled{
+  --nav-h: 56px;
+  background:rgba(255,255,255,.96);
+  border-bottom-color:var(--border);
+  box-shadow:0 4px 20px rgba(0,0,0,.06)
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--w);margin:0 auto;
+  padding:1.2rem 1.5rem;transition:var(--tx)
+}
+.navbar.scrolled .nav-inner{padding:.85rem 1.5rem}
+
+/* Logo */
+.logo{
+  font-family:var(--font-h);font-size:1.8rem;font-weight:900;
+  color:var(--secondary);letter-spacing:-1px;display:flex;align-items:center
+}
+.logo .la{color:var(--primary);display:inline-block;transition:var(--tb)}
+.logo:hover .la{transform:scale(1.25) rotate(-8deg)}
+
+/* Nav links */
+.nav-links{display:flex;gap:2rem}
+.nav-link{font-weight:500;font-size:.95rem;color:var(--muted);position:relative;padding:.3rem 0}
+.nav-link::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+  background:linear-gradient(90deg,var(--primary),#60a5fa);
+  transition:var(--tx);border-radius:1px
+}
+.nav-link:hover,.nav-link.active{color:var(--primary)}
+.nav-link:hover::after,.nav-link.active::after{width:100%}
+
+/* Nav right */
+.nav-right{display:flex;align-items:center;gap:1rem}
+
+/* Burger menu */
+.burger{
+  display:none;flex-direction:column;justify-content:space-between;
+  width:26px;height:20px;cursor:pointer;z-index:1010;padding:0
+}
+.burger .bbar{width:100%;height:2.5px;background:var(--secondary);border-radius:4px;transition:var(--tx);transform-origin:center}
+.burger.open .bbar:nth-child(1){transform:translateY(8.75px) rotate(45deg)}
+.burger.open .bbar:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open .bbar:nth-child(3){transform:translateY(-8.75px) rotate(-45deg)}
+
+/* Nav drawer (mobile) */
+.nav-drawer{transition:var(--tx)}
