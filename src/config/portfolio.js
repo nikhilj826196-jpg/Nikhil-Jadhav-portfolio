@@ -5,10 +5,10 @@
 export const personal = {
   name: "Nikhil Jadhav",
   firstName: "Nikhil",
-  role: "Frontend Developer",
+  role: "Full Stack Developer",
   roleAlt: "React Developer",
   tagline: "Building elegant, high-performance web experiences.",
-  bio1: "I am a passionate Frontend Developer with a strong foundation in modern web technologies. I love translating complex designs into clean, performant, and interactive user experiences that make an impact.",
+  bio1: "I am a passionate Full Stack Developer with a strong foundation in modern web technologies. I love translating complex designs into clean, performant, and interactive user experiences that make an impact.",
   bio2: "My approach focuses on writing modular, reusable code and staying current with evolving web standards — bridging the gap between aesthetics and functionality, always ensuring cross-device responsiveness.",
   photo: "/nikhil.jpg",
   resume: "/Nikhil_Jadhav_Resume.pdf",

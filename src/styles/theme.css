@@ -1,0 +1,260 @@
+/* ============================================================
+   THEME — Colour Variants & Dark Mode
+   Applied via data-theme="..." and data-dark="true" on <html>
+============================================================ */
+
+/* -- Purple -------------------------------------------------- */
+[data-theme="purple"] {
+  --primary:       #7c3aed;
+  --primary-h:     #6d28d9;
+  --primary-d:     #5b21b6;
+  --primary-l:     #f5f3ff;
+  --primary-100:   #ede9fe;
+  --primary-glow:  rgba(124,58,237,.18);
+  --sb:  0 8px 30px rgba(124,58,237,.25);
+  --sb2: 0 16px 50px rgba(124,58,237,.35);
+}
+
+/* -- Emerald ------------------------------------------------- */
+[data-theme="emerald"] {
+  --primary:       #059669;
+  --primary-h:     #047857;
+  --primary-d:     #065f46;
+  --primary-l:     #ecfdf5;
+  --primary-100:   #d1fae5;
+  --primary-glow:  rgba(5,150,105,.18);
+  --sb:  0 8px 30px rgba(5,150,105,.25);
+  --sb2: 0 16px 50px rgba(5,150,105,.35);
+}
+
+/* -- Rose ---------------------------------------------------- */
+[data-theme="rose"] {
+  --primary:       #e11d48;
+  --primary-h:     #be123c;
+  --primary-d:     #9f1239;
+  --primary-l:     #fff1f2;
+  --primary-100:   #ffe4e6;
+  --primary-glow:  rgba(225,29,72,.18);
+  --sb:  0 8px 30px rgba(225,29,72,.25);
+  --sb2: 0 16px 50px rgba(225,29,72,.35);
+}
+
+/* -- Amber --------------------------------------------------- */
+[data-theme="amber"] {
+  --primary:       #d97706;
+  --primary-h:     #b45309;
+  --primary-d:     #92400e;
+  --primary-l:     #fffbeb;
+  --primary-100:   #fef3c7;
+  --primary-glow:  rgba(217,119,6,.18);
+  --sb:  0 8px 30px rgba(217,119,6,.25);
+  --sb2: 0 16px 50px rgba(217,119,6,.35);
+}
+
+/* -- Dark Mode ----------------------------------------------- */
+[data-dark="true"] {
+  --bg:        #0f172a;
+  --bg2:       #1e293b;
+  --text:      #f1f5f9;
+  --muted:     #94a3b8;
+  --light:     #475569;
+  --border:    #334155;
+  --border-l:  #1e293b;
+  --secondary: #f8fafc;
+  --sec-800:   #e2e8f0;
+  --sec-700:   #cbd5e1;
+
+  --s1: 0 1px 3px rgba(0,0,0,.4),  0 1px 2px rgba(0,0,0,.3);
+  --s2: 0 4px 6px -1px rgba(0,0,0,.4), 0 2px 4px -1px rgba(0,0,0,.3);
+  --s3: 0 10px 15px -3px rgba(0,0,0,.4), 0 4px 6px -2px rgba(0,0,0,.3);
+  --s4: 0 20px 25px -5px rgba(0,0,0,.4), 0 10px 10px -5px rgba(0,0,0,.25);
+  --s5: 0 25px 50px -12px rgba(0,0,0,.6);
+}
+
+/* Navbar dark */
+[data-dark="true"] .navbar {
+  background: rgba(15,23,42,.8);
+  border-bottom-color: rgba(51,65,85,.5);
+}
+[data-dark="true"] .navbar.scrolled {
+  background: rgba(15,23,42,.97);
+  border-bottom-color: var(--border);
+}
+[data-dark="true"] .burger .bbar { background: var(--text); }
+
+/* Cards & surfaces dark */
+[data-dark="true"] .btn-o {
+  background: var(--bg2);
+  border-color: var(--border);
+  color: var(--text);
+}
+[data-dark="true"] .btn-o:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+[data-dark="true"] .btn-ghost {
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+/* Smooth colour transition on theme change */
+*,*::before,*::after {
+  transition:
+    background-color .35s ease,
+    border-color .35s ease,
+    color .35s ease,
+    box-shadow .35s ease;
+}
+/* But don't slow down transform-based animations */
+.btn,.logo .la,.nav-link,.swatch,
+.anim.fade-up,.anim.fade-l,.anim.fade-r {
+  transition: var(--tb);
+}
+.btn-o {
+  transition:
+    background .35s ease,
+    border-color .35s ease,
+    color .35s ease,
+    transform .4s cubic-bezier(.34,1.56,.64,1),
+    box-shadow .35s ease;
+}
+
+/* -- Theme Selector UI --------------------------------------- */
+.theme-selector {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* shared button shell */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  height: 36px;
+  padding: 0 .75rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  background: var(--bg);
+  cursor: pointer;
+  font-family: var(--font-b);
+  font-size: .8rem;
+  font-weight: 500;
+  transition: border-color .25s, color .25s, background .25s, box-shadow .25s, transform .2s;
+}
+.theme-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+  transform: translateY(-1px);
+}
+[data-dark="true"] .theme-toggle {
+  background: var(--bg2);
+}
+
+/* Dark toggle toggle-track */
+.toggle-track {
+  display: none; /* visual-only; using icon instead */
+}
+.dark-toggle { gap: .4rem; }
+
+/* Palette button */
+.palette-btn { gap: .45rem; }
+.palette-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.6);
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,.12);
+  flex-shrink: 0;
+  transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.palette-btn:hover .palette-dot { transform: scale(1.25); }
+.palette-btn.active { border-color: var(--primary); color: var(--primary); }
+.chevron-icon {
+  transition: transform .25s ease;
+  opacity: .7;
+}
+.palette-btn.active .chevron-icon { transform: rotate(180deg); }
+
+/* Backdrop */
+.palette-backdrop {
+  position: fixed; inset: 0; z-index: 1099;
+}
+
+/* Dropdown panel */
+.palette-dropdown {
+  position: absolute;
+  top: calc(100% + .6rem);
+  right: 0;
+  z-index: 1100;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  width: 180px;
+  box-shadow: var(--s4), 0 0 0 1px rgba(255,255,255,.05);
+  animation: popIn .2s cubic-bezier(.34,1.56,.64,1) both;
+}
+[data-dark="true"] .palette-dropdown { background: var(--bg2); }
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(-8px) scale(.96); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+.palette-label {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--light);
+  margin-bottom: .65rem;
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .5rem;
+}
+
+/* Individual colour swatch */
+.swatch {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1),
+              box-shadow .25s ease,
+              border-color .2s;
+  outline: none;
+}
+.swatch:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+.swatch.selected {
+  border-color: rgba(255,255,255,.8);
+  box-shadow: 0 0 0 3px var(--primary-glow), 0 4px 12px rgba(0,0,0,.25);
+  transform: scale(1.1);
+}
+
+/* Position wrapper so dropdown is anchored correctly */
+.theme-palette-wrap {
+  position: relative;
+}
+
+/* -- Additional Dark Mode Patches --------------------------- */
+[data-dark="true"] .nav-drawer {
+  background: var(--bg) !important;
+  border-top-color: var(--border);
+}
+[data-dark="true"] .sec-title { color: var(--secondary); }
+[data-dark="true"] .text-grad {
+  background: linear-gradient(135deg, var(--primary) 0%, #93c5fd 50%, var(--primary-d) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -12,3 +12,4 @@
 @import './styles/contact.css';    /* Contact form & Toasts */
 @import './styles/footer.css';     /* Footer */
 @import './styles/responsive.css'; /* Media queries & Back-to-top */
+@import './styles/theme.css';      /* Colour themes & Dark mode   */

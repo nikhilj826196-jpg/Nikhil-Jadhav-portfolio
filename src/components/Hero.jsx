@@ -119,7 +119,7 @@ export default function Hero() {
                 {",\n  "}
                 <span className="tp">role</span>
                 {": "}
-                <span className="ts">&apos;Frontend Developer&apos;</span>
+                <span className="ts">&apos;Full Stack Developer&apos;</span>
                 {",\n  "}
                 <span className="tp">stack</span>
                 {": ["}

@@ -1,4 +1,5 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { ThemeProvider } from "./context/ThemeContext";
 import { useScrollAnimation } from "./hooks/useScrollAnimation";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -29,7 +30,7 @@ export default function App() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <>
+    <ThemeProvider>
       {/* Scroll progress bar */}
       <div
         className="scroll-progress"
@@ -58,6 +59,6 @@ export default function App() {
       >
         <i className="fa-solid fa-arrow-up" />
       </button>
-    </>
+    </ThemeProvider>
   );
 }

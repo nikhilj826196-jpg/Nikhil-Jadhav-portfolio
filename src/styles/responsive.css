@@ -1,90 +1,376 @@
 /* ============================================================
-   BACK TO TOP
+   BACK TO TOP & RESPONSIVE DESIGN SYSTEM
+   Optimized across all standard device sizes.
 ============================================================ */
-.btt{
-  position:fixed;bottom:2rem;right:2rem;width:46px;height:46px;
-  background:linear-gradient(135deg,var(--primary),var(--primary-d));
-  color:#fff;border:none;border-radius:12px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;box-shadow:var(--sb);
-  transition:var(--tb);z-index:999;opacity:0;pointer-events:none;transform:translateY(10px)
+
+/* ---- BACK TO TOP BUTTON ---- */
+.btt {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-d));
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: var(--sb);
+  transition: var(--tb);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
 }
-.btt.show{opacity:1;pointer-events:auto;transform:translateY(0)}
-.btt:hover{transform:translateY(-3px);box-shadow:var(--sb2)}
+.btt.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.btt:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sb2);
+}
+
+/* ---- FLUID GRID ADJUSTMENT ---- */
+.proj-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+}
 
 /* ============================================================
-   RESPONSIVE
+   MEDIA BREAKPOINTS (Optimized)
 ============================================================ */
-@media(max-width:1100px){
-  .hero-grid{gap:2.5rem}
-  .about-grid{gap:3.5rem}
-  .contact-grid{gap:3rem}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .ft-brand{grid-column:span 2}
+
+/* -- 1. LAPTOP & SMALL DESKTOP (max-width: 1200px) ---------- */
+@media (max-width: 1200px) {
+  .hero-grid { gap: 2.5rem; }
+  .about-grid { gap: 3rem; }
+  .skills-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .contact-grid { gap: 3rem; }
+  .footer-grid { gap: 3rem; }
 }
-@media(max-width:968px){
-  .hero-sec{padding:7rem 0 2.5rem}
-  .about-sec,.skills-sec,.projects-sec,.contact-sec{padding:5rem 0}
-  .skills-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-grid{grid-template-columns:1fr;text-align:center;gap:2.5rem}
-  .hero-left{align-items:center}
-  .hero-p{margin-left:auto;margin-right:auto}
-  .hero-socials{justify-content:center}
-  .portrait-card{width:220px;height:290px}
-  .code-terminal{width:250px}
-  .about-grid{grid-template-columns:1fr;gap:2.5rem}
-  .about-photo-col{padding-top:0}
-  .about-frame{width:240px;max-width:80vw;height:auto;aspect-ratio:3/4}
-  .contact-grid{gap:3rem}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:3rem}
-  .ft-brand{grid-column:span 2;align-items:center;text-align:center}
-  .ft-tagline{margin-left:auto;margin-right:auto}
-  .ft-socials{justify-content:center}
-  .footer-bottom{flex-direction:column;text-align:center}
-  /* NAV — mobile */
-  .burger{display:flex}
-  .nav-drawer{
-    position:fixed;top:var(--nav-h);left:-100%;width:100%;
-    height:calc(100dvh - var(--nav-h));background:#fff;
-    padding:2.5rem 2rem;transition:var(--tx);
-    border-top:1px solid var(--border);box-shadow:var(--s4);overflow-y:auto
+
+/* -- 2. TABLET / SMALL LAPTOP (max-width: 992px) ------------ */
+@media (max-width: 992px) {
+  .hero-sec { padding: 95px 0 2.5rem; }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
   }
-  .nav-drawer.open{left:0}
-  .nav-links{flex-direction:column;gap:0;width:100%}
-  .nav-links li{border-bottom:1px solid var(--border-l)}
-  .nav-link{display:block;font-size:1.1rem;padding:.9rem 0}
-  .nav-link::after{display:none}
+  .hero-left {
+    align-items: center;
+  }
+  .hero-p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .hero-socials {
+    justify-content: center;
+  }
+  .hero-right {
+    align-items: center;
+    gap: 20px;
+  }
+  .portrait-card {
+    width: clamp(200px, 45vw, 240px);
+    height: auto;
+    aspect-ratio: 250/330;
+  }
+  .code-terminal {
+    width: clamp(240px, 55vw, 280px);
+  }
+
+  .about-sec { padding: 5rem 0; }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    justify-items: center;
+  }
+  .about-photo-col {
+    padding: 0;
+  }
+  .about-frame {
+    width: clamp(210px, 40vw, 260px);
+  }
+  .about-content {
+    align-items: center;
+    text-align: center;
+  }
+  .about-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skills-sec { padding: 5rem 0; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .skill-card { height: auto; min-height: 270px; }
+
+  .projects-sec { padding: 5rem 0; }
+
+  .contact-sec { padding: 5rem 0; }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .contact-form-wrap {
+    order: 1;
+  }
+  .contact-info {
+    order: 2;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .ft-brand {
+    grid-column: span 2;
+    align-items: center;
+    text-align: center;
+  }
+  .ft-tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ft-socials {
+    justify-content: center;
+  }
+
+  /* NAVBAR COLLAPSE SYSTEM */
+  .burger {
+    display: flex;
+  }
+  .nav-drawer {
+    position: fixed;
+    top: var(--nav-h);
+    left: -100%;
+    width: 100%;
+    height: calc(100dvh - var(--nav-h));
+    background: var(--bg);
+    padding: 2.5rem 2rem;
+    transition: var(--tx);
+    border-top: 1px solid var(--border);
+    box-shadow: var(--s4);
+    overflow-y: auto;
+  }
+  .nav-drawer.open {
+    left: 0;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+  .nav-links li {
+    border-bottom: 1px solid var(--border-l);
+  }
+  .nav-link {
+    display: block;
+    font-size: 1.1rem;
+    padding: .9rem 0;
+  }
+  .nav-link::after {
+    display: none;
+  }
 }
-@media(max-width:640px){
-  html{font-size:15px}
-  .hero-h1{font-size:2.4rem;letter-spacing:-.5px}
-  .hero-btns{flex-direction:column;width:100%}
-  .hero-btns .btn{width:100%}
-  .portrait-card{width:180px;height:238px}
-  .code-terminal{width:220px}
-  .skills-grid{grid-template-columns:1fr}
-  .proj-grid{grid-template-columns:1fr}
-  .cform-row{grid-template-columns:1fr}
-  .form-card{padding:1.75rem}
-  .footer-grid{grid-template-columns:1fr;gap:2.5rem;text-align:center}
-  .ft-brand{grid-column:span 1;align-items:center;text-align:center}
-  .ft-col{align-items:center;text-align:center}
-  .ft-tagline{margin-left:auto;margin-right:auto}
-  .ft-socials{justify-content:center}
-  .ft-tech-container{justify-content:center}
-  .about-frame{width:280px;max-width:80vw;height:auto;aspect-ratio:3/4}
-  .about-cta{flex-direction:column}
-  .about-cta .btn{width:100%}
-  .hero-chips{grid-template-columns:repeat(3,1fr)}
+
+/* -- 3. SMALL TABLET / PHABLET (max-width: 768px) ----------- */
+@media (max-width: 768px) {
+  .sec-head { margin-bottom: 2.5rem; }
+  
+  .skills-grid { gap: 1rem; }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .ft-brand {
+    grid-column: span 1;
+  }
+  .ft-col {
+    align-items: center;
+    text-align: center;
+  }
+  .ft-tech-container {
+    justify-content: center;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
 }
-@media(max-width:400px){
-  .container{padding:0 1rem}
-  .about-frame{width:260px;max-width:75vw;height:auto;aspect-ratio:3/4}
-  .hero-chips{grid-template-columns:1fr;margin-top:1.5rem}
-  .hero-chip{padding:.75rem .5rem;border-bottom:1px solid var(--border)}
-  .hero-chip:last-child{border-bottom:none}
-  .form-card{padding:1.25rem}
-  .proj-body{padding:1.25rem}
-  .proj-actions{flex-direction:column;align-items:stretch;gap:.6rem}
-  .proj-btn{width:100%;justify-content:center}
+
+/* -- 4. MOBILE LANDSCAPE / LARGE MOBILE (max-width: 576px) -- */
+@media (max-width: 576px) {
+  .hero-sec { padding: 85px 0 2rem; }
+  .hero-h1 { font-size: clamp(2.2rem, 8vw, 3.2rem); }
+  
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+  .hero-btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-chips {
+    grid-template-columns: 1fr;
+    margin-top: 1.5rem;
+  }
+  .hero-chip {
+    border-bottom: 1px solid var(--border-l);
+    padding: 0.95rem 0.5rem;
+  }
+  .hero-chip:last-child {
+    border-bottom: none;
+  }
+
+  .about-frame {
+    width: 250px;
+    max-width: 80vw;
+  }
+  .about-cta {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .about-cta .btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+  .cform-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* -- 5. MEDIUM MOBILE (max-width: 425px) -------------------- */
+@media (max-width: 425px) {
+  html { font-size: 15px; }
+  
+  .hero-h1 {
+    font-size: clamp(2rem, 8.5vw, 2.5rem);
+    letter-spacing: -0.5px;
+  }
+  
+  .portrait-card {
+    width: 190px;
+  }
+  .code-terminal {
+    width: 230px;
+  }
+
+  .about-frame {
+    width: 220px;
+  }
+  .hl-card {
+    padding: 1rem;
+    gap: 0.85rem;
+  }
+  .hl-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .proj-body {
+    padding: 1.25rem;
+  }
+  .proj-desc {
+    margin-bottom: 1.1rem;
+  }
+  .proj-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+  .proj-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* -- 6. IPHONE & SMALL MOBILE (max-width: 375px) ----------- */
+@media (max-width: 375px) {
+  .hero-p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .about-frame {
+    width: 190px;
+  }
+  .hl-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .clink {
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+  }
+  .clink-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.15rem;
+  }
+}
+
+/* -- 7. MINI MOBILE (max-width: 320px) ---------------------- */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 0.85rem;
+  }
+  
+  .hero-h1 {
+    font-size: 1.85rem;
+  }
+  
+  .portrait-card {
+    width: 170px;
+  }
+  .code-terminal {
+    width: 210px;
+  }
+  
+  .form-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .palette-dropdown {
+    width: 155px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

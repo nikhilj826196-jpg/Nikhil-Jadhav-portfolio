@@ -1,5 +1,6 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { navLinks } from "../config/portfolio";
+import ThemeSelector from "./ThemeSelector";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,6 +20,17 @@ export default function Header() {
     window.addEventListener("scroll", fn, { passive: true });
     fn();
     return () => window.removeEventListener("scroll", fn);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 992) {
+        setOpen(false);
+        document.body.style.overflow = "";
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const close = () => {
@@ -59,6 +71,7 @@ export default function Header() {
 
         {/* Right actions */}
         <div className="nav-right">
+          <ThemeSelector />
           <a href="#contact" className="btn btn-p btn-sm" onClick={close}>
             Hire Me
           </a>

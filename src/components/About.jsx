@@ -26,7 +26,7 @@ export default function About() {
               {/* Floating experience badge */}
               <div className="exp-badge">
                 <span className="exp-icon"><i className="fa-solid fa-code" /></span>
-                <span className="exp-text">Frontend<br/>Developer</span>
+                <span className="exp-text">Full Stack<br/>Developer</span>
               </div>
               {/* Floating tech badge */}
               <div className="tech-badge">
