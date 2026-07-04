@@ -67,6 +67,11 @@ export default function Header() {
               </li>
             ))}
           </ul>
+          <div className="nav-drawer-footer">
+            <a href="#contact" className="btn btn-p btn-mobile-hire" onClick={close}>
+              Hire Me
+            </a>
+          </div>
         </nav>
 
         {/* Right actions */}
