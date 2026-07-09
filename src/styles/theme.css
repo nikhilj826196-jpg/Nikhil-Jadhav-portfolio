@@ -1,5 +1,5 @@
 /* ============================================================
-   THEME — Colour Variants & Dark Mode
+   THEME â€” Colour Variants & Dark Mode
    Applied via data-theme="..." and data-dark="true" on <html>
 ============================================================ */
 
@@ -194,7 +194,7 @@
   border: 1.5px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
-  width: 180px;
+  width: max-content;
   box-shadow: var(--s4), 0 0 0 1px rgba(255,255,255,.05);
   animation: popIn .2s cubic-bezier(.34,1.56,.64,1) both;
 }

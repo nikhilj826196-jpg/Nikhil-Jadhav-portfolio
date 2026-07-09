@@ -1,5 +1,5 @@
 /* ============================================================
-   CONTACT  (Contact.jsx) — Premium Vercel / Linear / Apple Design
+   CONTACT  (Contact.jsx) â€” Premium Vercel / Linear / Apple Design
 ============================================================ */
 
 .contact-sec {
@@ -48,7 +48,7 @@
   align-items: start;
 }
 
-/* ── LEFT INFO & CARDS ───────────────────────────────────── */
+/* â”€â”€ LEFT INFO & CARDS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -229,7 +229,7 @@
   letter-spacing: -0.01em;
 }
 
-/* ── RIGHT FORM CARD ─────────────────────────────────────── */
+/* â”€â”€ RIGHT FORM CARD â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .contact-form-wrap {
   width: 100%;
 }
@@ -297,8 +297,8 @@
   font-size: 0.95rem;
   border: 1.5px solid rgba(37, 99, 235, 0.12);
   border-radius: 14px;
-  background: #f8fafc;
-  color: var(--secondary);
+  background: var(--bg2);
+  color: var(--text);
   outline: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   resize: none;
@@ -323,7 +323,7 @@
 .cform-inp:focus,
 .cform-txt:focus {
   border-color: #2563eb;
-  background: #fff;
+  background: var(--bg);
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
@@ -435,7 +435,7 @@
 @keyframes toastSlideIn { to { transform: translateX(0); } }
 @keyframes toastSlideOut { from { transform: translateX(0); } to { transform: translateX(120%); } }
 
-/* ── RESPONSIVE OVERRIDES ────────────────────────────────── */
+/* â”€â”€ RESPONSIVE OVERRIDES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;
