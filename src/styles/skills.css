@@ -182,6 +182,9 @@
 .ico-n { background: linear-gradient(135deg,#86efac,#3c873a); color:#fff; box-shadow:0 4px 14px rgba(60,135,58,.28); }
 .ico-m { background: linear-gradient(135deg,#67e8f9,#00758f); color:#fff; box-shadow:0 4px 14px rgba(0,117,143,.28); }
 .ico-g { background: linear-gradient(135deg,#fb923c,#f05032); color:#fff; box-shadow:0 4px 14px rgba(240,80,50,.28); }
+.ico-b { background: linear-gradient(135deg,#a78bfa,#7c3aed); color:#fff; box-shadow:0 4px 14px rgba(124,58,237,.28); }
+.ico-f { background: linear-gradient(135deg,#ff7262,#a259ff); color:#fff; box-shadow:0 4px 14px rgba(162,89,255,.28); }
+.ico-net { background: linear-gradient(135deg,#38bdf8,#0284c7); color:#fff; box-shadow:0 4px 14px rgba(2,132,199,.28); }
 
 /* ── SKILL NAME ── */
 .sk-name {

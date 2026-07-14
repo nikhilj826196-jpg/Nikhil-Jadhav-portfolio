@@ -80,6 +80,27 @@ export const skills = [
     description:
       "Version control, branching strategies, pull requests, and collaborative development.",
   },
+  {
+    name: "Bootstrap",
+    icon: "fa-brands fa-bootstrap",
+    colorClass: "ico-b",
+    description:
+      "Responsive CSS framework for rapid UI styling, customisable grid layouts, and pre-built components.",
+  },
+  {
+    name: "Figma (Software)",
+    icon: "fa-brands fa-figma",
+    colorClass: "ico-f",
+    description:
+      "Interactive UI/UX design, modern wireframing, component prototyping, and developer handoffs.",
+  },
+  {
+    name: "Networking",
+    icon: "fa-solid fa-network-wired",
+    colorClass: "ico-net",
+    description:
+      "Fundamentals of computer networks, TCP/IP, OSI layers, routing protocols, DNS, and HTTP/HTTPS.",
+  },
 ];
 
 export const projects = [
@@ -115,6 +136,28 @@ export const projects = [
     gradient: "linear-gradient(135deg, #3b0764, #7c3aed)",
     demo: "/",
     github: "https://github.com/nikhil-jadhav/portfolio",
+  },
+  {
+    title: "E-Commerce Platform",
+    label: "Web App",
+    description:
+      "A scalable online store featuring product catalogs, live search, cart functionality, secure Stripe checkout, and an admin panel for inventory management.",
+    icon: "fa-cart-shopping",
+    tags: ["React", "Node JS", "MongoDB"],
+    gradient: "linear-gradient(135deg, #1e293b, #0f172a)",
+    demo: "https://github.com/nikhil-jadhav/ecommerce-platform",
+    github: "https://github.com/nikhil-jadhav/ecommerce-platform",
+  },
+  {
+    title: "Real-Time Chat App",
+    label: "Web App",
+    description:
+      "A messaging app built with WebSockets. Supports instant message delivery, user presence tracking, typing notifications, and room-based chat channels.",
+    icon: "fa-comments",
+    tags: ["React", "Socket.io", "Express"],
+    gradient: "linear-gradient(135deg, #4f46e5, #3730a3)",
+    demo: "https://github.com/nikhil-jadhav/chat-app",
+    github: "https://github.com/nikhil-jadhav/chat-app",
   },
 ];
 

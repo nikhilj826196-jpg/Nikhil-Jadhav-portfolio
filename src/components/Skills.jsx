@@ -37,6 +37,21 @@ const skillMeta = {
     level: 90,
     shortDesc: "Branching workflows, pull requests, and collaborative version-control practices.",
   },
+  "Bootstrap": {
+    badges: ["Responsive", "Utility-first", "Grid"],
+    level: 88,
+    shortDesc: "Rapid responsive development with Bootstrap's grid system and utility classes.",
+  },
+  "Figma (Software)": {
+    badges: ["UI/UX Design", "Prototyping", "Handoff"],
+    level: 80,
+    shortDesc: "Creating modern wireframes, responsive UI components, and interactive prototypes.",
+  },
+  "Networking": {
+    badges: ["TCP/IP", "DNS & HTTP", "OSI Model"],
+    level: 75,
+    shortDesc: "Fundamentals of data flow, network layers, domain routing, and protocol diagnostics.",
+  },
 };
 
 export default function Skills() {
